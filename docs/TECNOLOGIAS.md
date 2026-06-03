@@ -26,3 +26,8 @@ Ferramentas de suporte para garantir a portabilidade e gerenciamento do projeto.
 Utilizado como camada de suporte de alta performance para duas regras arquiteturais distintas:
 * **Cache da Dashboard:** Armazena o resultado consolidado do cálculo da meta diária e saldos do usuário para evitar consultas repetitivas e pesadas no PostgreSQL. O cache é invalidado automaticamente a cada novo lançamento financeiro.
 * **Blacklist de Tokens (Logout Stateful):** Garante a invalidação imediata de tokens JWT antes do seu tempo natural de expiração quando o usuário solicita o encerramento da sessão, mantendo a integridade da segurança sem sobrecarregar a base relacional.
+
+## 6. Documentação da API: Springdoc OpenAPI & Swagger UI
+Utilizado para automatizar a geração da documentação técnica e interativa dos endpoints da aplicação.
+* **Geração Automatizada:** Analisa as anotações dos controladores na `Resource Layer` e gera a especificação OpenAPI 3.
+* **Interface Interativa (Sandbox):** Permite que desenvolvedores de Front-end ou avaliadores testem os endpoints diretamente pelo navegador, simulando envios de dados e fluxos de autenticação sem a necessidade de softwares terceiros (como Postman/Insomnia).
