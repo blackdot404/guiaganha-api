@@ -1,0 +1,16 @@
+server:
+  servlet:
+    context-path: /v1
+
+spring:
+  application:
+    name: guiaganha
+  jpa:
+    open-in-view: true
+  profiles:
+    active:
+    - test
+
+springdoc:
+  swagger-ui:
+    path: /doc

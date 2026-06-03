@@ -1,0 +1,15 @@
+# Copie este arquivo, renomeie para application-test.yaml e preencha com seus dados locais
+spring:
+  datasource:
+    url: jdbc:postgresql://SEU_IP:5432/SEU_BANCO
+    username: SEU_USUARIO
+    password: SUA_SENHA
+  # --------------
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        "[format_sql]": true
+        "[jdbc.lob.non_contextual_creation]": true
