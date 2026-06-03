@@ -21,3 +21,8 @@ A segurança do sistema é projetada para o modelo de arquitetura de APIs modern
 Ferramentas de suporte para garantir a portabilidade e gerenciamento do projeto.
 * **Apache Maven:** Gerenciador de dependências que padroniza o ciclo de vida do build e o download de bibliotecas do ecossistema Java.
 * **Docker & Docker Compose:** Utilizado para containerizar o banco de dados PostgreSQL, permitindo que o ambiente de banco seja inicializado de forma idêntica em qualquer máquina de desenvolvimento com um único comando.
+
+## 5. Banco de Dados em Memória: Redis
+Utilizado como camada de suporte de alta performance para duas regras arquiteturais distintas:
+* **Cache da Dashboard:** Armazena o resultado consolidado do cálculo da meta diária e saldos do usuário para evitar consultas repetitivas e pesadas no PostgreSQL. O cache é invalidado automaticamente a cada novo lançamento financeiro.
+* **Blacklist de Tokens (Logout Stateful):** Garante a invalidação imediata de tokens JWT antes do seu tempo natural de expiração quando o usuário solicita o encerramento da sessão, mantendo a integridade da segurança sem sobrecarregar a base relacional.
