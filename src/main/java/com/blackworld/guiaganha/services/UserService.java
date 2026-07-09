@@ -2,7 +2,6 @@ package com.blackworld.guiaganha.services;
 
 import java.math.BigDecimal;
 import java.util.UUID;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import com.blackworld.guiaganha.entities.User;
@@ -14,12 +13,10 @@ import com.blackworld.guiaganha.services.exceptions.ResourceNotFoundException;
 @Service
 public class UserService {
 
-    @Autowired
-    private UserRepository repository;
-
+    private final UserRepository repository;
     private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
-    UserService(UserRepository repository) {
+    public UserService(UserRepository repository) {
         this.repository = repository;
     }
 
